@@ -9,15 +9,21 @@ const customerSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
-  phoneNumber: {
-    type: Number,
-    required: true,
-  },
-  city: String,
-  country: {
+  role: {
     type: String,
-    required: true,
-    default: "Indonesia",
+    enum: ["admin", "user"],
+    default: "user",
+  },
+  active: {
+    type: Boolean,
+    default: true,
+  },
+  photo: {
+    type: String,
+    default: "user-default.jpg",
+  },
+  password: {
+    type: String,
   },
 });
 
