@@ -3,7 +3,14 @@ const Customer = require("./../models/customerModel"); //memanggil model
 
 const getCustomers = async (req, res, next) => {
   try {
-    const customers = await Customer.find();
+    const queryObject = { ...req.query };
+    const excludeColumn = ["page", "sort", "limit", "fields"];
+    excludeColumn.forEach((el) => delete queryObject[el]);
+    // const customers = await Customer.find(req.query);
+    console.log(req.query, queryObject);
+
+    const customers = await Customer.find(queryObject);
+
     res.status(200).json({
       status: "success",
       totalData: customers.length,
