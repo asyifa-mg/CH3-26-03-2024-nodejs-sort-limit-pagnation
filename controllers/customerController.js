@@ -1,15 +1,58 @@
 const fs = require("fs");
 const Customer = require("./../models/customerModel"); //memanggil model
+const { query } = require("express");
 
 const getCustomers = async (req, res, next) => {
   try {
+    //1. basic filter
     const queryObject = { ...req.query };
     const excludeColumn = ["page", "sort", "limit", "fields"];
     excludeColumn.forEach((el) => delete queryObject[el]);
     // const customers = await Customer.find(req.query);
-    console.log(req.query, queryObject);
+    //console.log(req.query, queryObject);
 
-    const customers = await Customer.find(queryObject);
+    //2. advance filter
+    //{age: {$}gte: 5}}
+    let queryStr = JSON.stringify(queryObject);
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`); //=>$gt, $gte, $lte;
+    queryStr = JSON.parse(queryStr);
+    console.log(queryStr);
+
+    let query = Customer.find(queryStr);
+
+    //3. Sorting
+    //Sorting ascending = name , kalau descending = -name ex: localhost:8000/api/v1/customers?age[gt]=20&sort=-age
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(",").join("");
+      console.log(sortBy);
+      query = query.sort(sortBy);
+    } else {
+      query = query.sort("-createdAt");
+    }
+
+    //4. limiting fields
+    if (req.query.fields) {
+      const fields = req.query.fields.split(",").join("");
+      query = query.select(fields);
+    } else {
+      query = query.select("-__v");
+    }
+
+    //5. Pagination
+    //request query dibawah ini
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.page * 1 || 2;
+    const skip = (page - 1) * limit;
+    //page 3&limit=2==> data ke 5 dan 6
+    query = query.skip(skip).limit(limit);
+
+    if (req.query.page) {
+      let numCustomers = await Customer.countDocuments();
+      if (skip > numCustomers) throw new Error("Page does not exist!");
+    }
+
+    //Eksekusi Query
+    const customers = await query;
 
     res.status(200).json({
       status: "success",

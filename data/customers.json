@@ -1,56 +1,79 @@
 [
   {
-    "_id": "65fda5772f992eab20848cc6",
-    "name": "Nadia Douglas",
-    "email": "nadiadouglas@cofine.com",
+    "_id": "6602d6ed59a93cb3832779ec",
+    "name": "Hatfield Hawkins",
+    "age": 23,
+    "email": "hatfieldhawkins@furnafix.com",
+    "role": "user",
+    "active": true,
+    "photo": "user-1.jpg",
+    "password": "",
+    "createdAt": "2019-05-16T12:41:07"
+  },
+  {
+    "_id": "6602d6eda921a885fb9a3295",
+    "name": "Wong Atkins",
+    "age": 27,
+    "email": "wongatkins@furnafix.com",
+    "role": "user",
+    "active": false,
+    "photo": "user-3.jpg",
+    "password": "",
+    "createdAt": "2017-05-16T08:26:54"
+  },
+  {
+    "_id": "6602d6ed39190402c41cd921",
+    "name": "Downs Hess",
+    "age": 36,
+    "email": "downshess@furnafix.com",
+    "role": "admin",
+    "active": false,
+    "photo": "user-5.jpg",
+    "password": "",
+    "createdAt": "2018-06-07T09:40:17"
+  },
+  {
+    "_id": "6602d6edfea0b117e2de8139",
+    "name": "Washington Bray",
+    "age": 20,
+    "email": "washingtonbray@furnafix.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-2.jpg",
+    "password": "",
+    "createdAt": "2015-11-01T11:15:32"
+  },
+  {
+    "_id": "6602d6ed25cc24732e662ab7",
+    "name": "Stout Barber",
+    "age": 37,
+    "email": "stoutbarber@furnafix.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-5.jpg",
+    "password": "",
+    "createdAt": "2017-07-09T10:02:27"
+  },
+  {
+    "_id": "6602d6ed3518ef0553abfb7c",
+    "name": "Vickie Sweeney",
+    "age": 39,
+    "email": "vickiesweeney@furnafix.com",
+    "role": "user",
+    "active": false,
+    "photo": "user-1.jpg",
+    "password": "",
+    "createdAt": "2015-10-25T12:38:32"
+  },
+  {
+    "_id": "6602d6ed9d57f7f8d58ecdbf",
+    "name": "Marylou Stephenson",
+    "age": 22,
+    "email": "maryloustephenson@furnafix.com",
     "role": "user",
     "active": false,
     "photo": "user-2.jpg",
-    "password": ""
-  },
-  {
-    "_id": "65fda577dd1a901e9be017c6",
-    "name": "Pennington Burgess",
-    "email": "penningtonburgess@cofine.com",
-    "role": "user",
-    "active": false,
-    "photo": "user-5.jpg",
-    "password": ""
-  },
-  {
-    "_id": "65fda5772efb9e70d3cabf7c",
-    "name": "Frost Huber",
-    "email": "frosthuber@cofine.com",
-    "role": "admin",
-    "active": true,
-    "photo": "user-5.jpg",
-    "password": ""
-  },
-  {
-    "_id": "65fda577e9373b39ad75d256",
-    "name": "Valerie Cantu",
-    "email": "valeriecantu@cofine.com",
-    "role": "user",
-    "active": false,
-    "photo": "user-4.jpg",
-    "password": ""
-  },
-  {
-    "_id": "65fda57772150345ce5ce94d",
-    "name": "Elizabeth Vaughan",
-    "email": "elizabethvaughan@cofine.com",
-    "role": "admin",
-    "active": true,
-    "photo": "user-3.jpg",
-    "password": ""
-  },
-  {
-    "_id": "65fda577befa52aa05d66f7d",
-    "name": "Adela Jackson",
-    "email": "adelajackson@cofine.com",
-    "role": "user",
-    "active": true,
-    "photo": "user-5.jpg",
-    "password": ""
+    "password": "",
+    "createdAt": "2018-10-18T07:26:04"
   }
 ]
